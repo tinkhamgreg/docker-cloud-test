@@ -5,6 +5,5 @@ RUN apt-get -f -y install python-pip
 RUN pip install Flask
 COPY unh698.py /src/unh698.py
 EXPOSE 8000
-CMD ["python", "/src/unh698.py", "-p 8000"]
 COPY . /src
 WORKDIR /src
