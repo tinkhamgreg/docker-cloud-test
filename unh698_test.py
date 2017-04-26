@@ -15,7 +15,7 @@ class FlaskrTestCase(unittest.TestCase):
         # Render the / path of the website
         rv = self.app.get('/')
         # Chech that the page contians the desired phrase
-        assert b'UNH 698 Website' in rv.data
+        assert b'UNH 698 website' in rv.data
 
     def test_link_to_my_page(self):
         rv = self.app.get('/')
