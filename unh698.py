@@ -1,9 +1,15 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
+from prometheus_metrics import setup_metrics
+setup_metrics(app)
 
 @app.route('/')
-def hello_world():
-    return 'UNH698 Website'
+def run_flask():
+    return render_template('index.html')
+
+@app.route('/rlmodels')
+def rlmodels():
+    return render_template('rlmodels.html')
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',port = 8080)
+    app.run(debug=True, host='0.0.0.0')
